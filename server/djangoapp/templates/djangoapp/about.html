@@ -13,12 +13,12 @@
     <script src="https://kit.fontawesome.com/72847d81c8.js" crossorigin="anonymous"></script>
 </head>
 
-    <body>
-    <!--Add a nav bar here -->
+<body>
+<!--Add a nav bar here -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="{% url 'djangoapp:index' %}">Best Cars Dealership</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
@@ -26,23 +26,32 @@
                     <a class="nav-link" href="{% url 'djangoapp:index' %}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'djangoapp:about' %}">About</a>
+                    <a class="nav-link" href="{% url 'djangoapp:about' %}">About<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'djangoapp:contact' %}">Contact</a>
                 </li>
             </ul>
-          {% if user.is_authenticated %}
-          <div class="ml-auto">
-            <span class="mr-2">{{ user.first_name }}({{ user.username }})</span>
-            <a href="{% url 'djangoapp:logout' %}">Log out</a>
+            {% if user.is_authenticated %}
+            <div class="ml-auto">
+                <span class="mr-2">{{ user.first_name }}({{ user.username }})</span>
+                    <a href="{% url 'djangoapp:logout' %}">Log out</a>
+            </div>
+
+            {% endif %}
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4">Welcome to <strong>Best Cars Dealership, </strong><small class="">home to the best cars in North America.</small></h1>
+              <p class="lead">We sell domestic and imported cars at reasonable prices.</p>
+            </div>
           </div>
 
-          {% endif %}
-        </div>
-      </nav>
-    <!--Add a dealer table here -->
 
-    </body>
+    </div>
+
+</body>
 
 </html>
