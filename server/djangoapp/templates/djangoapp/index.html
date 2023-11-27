@@ -16,7 +16,7 @@
     <body>
     <!--Add a nav bar here -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{% url 'djangoapp:index' %}">Dealership Review</a>
+        <a class="navbar-brand" href="{% url 'djangoapp:index' %}">Best Cars Dealership</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,7 +35,7 @@
           {% if user.is_authenticated %}
           <div class="ml-auto">
             <span class="mr-2">{{ user.first_name }}({{ user.username }})</span>
-            <a href="#">Log out</a>
+            <a href="{% url 'djangoapp:logout' %}">Log out</a>
           </div>
           {% else %}
           <form class="form-inline ml-auto" action="{% url 'djangoapp:login' %}" method="post">
@@ -43,7 +43,7 @@
             <input class="form-control mr-sm-2" type="text" placeholder="Username" name="username" required>
             <input class="form-control mr-sm-2" type="password" placeholder="Password" name="psw" required>
             <button class="btn btn-primary my-2 my-sm-0 mr-2" type="submit">Login</button>
-            <a class="btn btn-outline-primary my-2 my-sm-0"  href="#">Sign Up</a>
+            <a class="btn btn-outline-primary my-2 my-sm-0"  href="{% url 'djangoapp:registration' %}">Sign Up</a>
           </form>
           {% endif %}
         </div>
