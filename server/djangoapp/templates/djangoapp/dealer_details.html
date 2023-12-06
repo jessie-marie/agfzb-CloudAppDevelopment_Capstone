@@ -29,6 +29,9 @@
           </ul>
           {% if user.is_authenticated %}
           <div class="ml-auto">
+            <a class="btn btn-outline-primary my-2 my-sm-0"  href="{% url 'djangoapp:add_review' %}">Add New Review</a>
+          </div>
+          <div class="ml-auto">
             <span class="mr-2">{{ user.first_name }}({{ user.username }})</span>
             <a href="{% url 'djangoapp:logout' %}">Log out</a>
           </div>
